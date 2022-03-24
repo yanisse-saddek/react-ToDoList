@@ -1,5 +1,5 @@
 import {useForm} from 'react-hook-form'
-import {useContext} from 'react'
+import {useContext, useState} from 'react'
 import {Context} from '../App'
 
 
@@ -9,7 +9,16 @@ export default function Task(){
 
     const onSubmit = (data)=>{
         var copyTache = [...contexte.tasks]
-        var tache = data
+        var lastIndex = contexte.tasks.map(task=>{
+                return task.id
+        })
+        var tache = {
+            id:parseInt(lastIndex.slice(-1))+1,
+            title:data.title,
+            priority:data.priority
+        }
+
+        console.log(tache)
         copyTache.push(tache)
         contexte.changeTasks(copyTache)
     }

@@ -7,8 +7,8 @@ export const Context = createContext();
 function App() {
   
   var tasks = [
-     {  title: 'Tache 01', priority: 'Important'},        
-     { title: 'Tache 02', priority: 'Urgent'}   
+     {id:1, title: 'Tache 01', priority: 'Important'},        
+     {id:2, title: 'Tache 02', priority: 'Urgent'}   
   ]
   const [task, setTask] = useState(tasks)
 
